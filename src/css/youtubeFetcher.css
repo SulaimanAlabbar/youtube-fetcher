@@ -1,0 +1,24 @@
+.youtubeFetcherContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.youtubeFetcherTop {
+    order: 1;
+}
+
+.youtubeFetcherBottom {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.youtubeFetcherBottom .Controls {
+    order: 1;
+    height: 100%;
+}
+
+.youtubeFetcherBottom .ProfileInfo {
+    order: 2;
+}

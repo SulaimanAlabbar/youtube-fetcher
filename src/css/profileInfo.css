@@ -1,0 +1,19 @@
+.profileInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFE66D;
+}
+
+.profileInfoLeft {
+    order: 1;
+}
+
+.profileInfoMiddle {
+    order: 2;
+}
+
+.profileInfoRight {
+    order: 3;
+}
