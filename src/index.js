@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import YoutubeFetcher from "./components/youtubeFetcher";
+import YoutubeFetcher from "./components";
 
 const App = () => {
   return <YoutubeFetcher />;
