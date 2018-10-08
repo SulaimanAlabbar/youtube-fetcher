@@ -1,6 +1,7 @@
-.youtubeFetcherContainer {
+/* .youtubeFetcherContainer {
     display: flex;
     flex-direction: column;
+    align-content: stretch;
 }
 
 .youtubeFetcherTop {
@@ -11,14 +12,22 @@
     order: 2;
     display: flex;
     flex-direction: row;
+    height: 100%;
+    align-content: stretch;
 
 }
 
 .youtubeFetcherBottom .Controls {
     order: 1;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    align-items: stretch;
+    flex: 1;
+    justify-content: center;
 }
 
 .youtubeFetcherBottom .ProfileInfo {
     order: 2;
-}
+    height: 100%;
+} */

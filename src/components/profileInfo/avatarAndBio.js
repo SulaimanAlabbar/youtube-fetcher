@@ -32,7 +32,7 @@ function AvatarAndBio(props) {
         src={"https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png"}
         className={classNames(classes.avatar, classes.bigAvatar)}
       />
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="subtitle2" gutterBottom>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A temporibus
         rerum voluptates consequatur cumque harum, dolor exercitationem pariatur
         excepturi sunt eaque officia, placeat nihil recusandae sed, quia
