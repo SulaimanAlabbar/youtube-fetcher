@@ -1,0 +1,6 @@
+.videosListContainer {
+    padding: 1em;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(8, minmax(10em, 20em));
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import VideoList from "./mainView/videoList";
+import VideosList from "./mainView/videosList";
 import PageButton from "./mainView/pageButton";
 import UpArrow from "../images/upArrow.png";
 import DownArrow from "../images/downArrow.png";
@@ -9,7 +9,7 @@ class MainView extends React.Component {
     return (
       <div style={{ backgroundColor: "#CAD8DE" }}>
         <PageButton Image={UpArrow} Class={"pageButton-Up"} />
-        <VideoList />
+        <VideosList />
         <PageButton Image={DownArrow} Class={"pageButton-Down"} />
       </div>
     );
