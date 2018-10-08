@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
-
+import AV from "../../images/avatar.jpg";
 const styles = {
   root: {
     width: "100%",
@@ -29,7 +29,8 @@ function AvatarAndBio(props) {
     <div className={classes.root}>
       <Avatar
         alt="Avatar"
-        src={"https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png"}
+        // src={"https://s.ytimg.com/yts/img/avatar_720-vflYJnzBZ.png"}
+        src={AV}
         className={classNames(classes.avatar, classes.bigAvatar)}
       />
       <Typography variant="subtitle2" gutterBottom>
