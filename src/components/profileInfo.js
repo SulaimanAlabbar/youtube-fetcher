@@ -1,9 +1,10 @@
 import React from "react";
 import AvatarAndBio from "./profileInfo/avatarAndBio";
-import Views from "./profileInfo/views";
-import Joined from "./profileInfo/joined";
+import Stats from "./profileInfo/stats";
 import "../css/profileInfo.css";
 
+const joined = "May 15, 2015";
+const views = "7,162,742 views";
 class ProfileInfo extends React.Component {
   render() {
     return (
@@ -12,10 +13,10 @@ class ProfileInfo extends React.Component {
           <AvatarAndBio />
         </div>
         <div className="profileInfoMiddle">
-          <Views />
+          <Stats header={"Views"} stat={views} />
         </div>
         <div className="profileInfoRight">
-          <Joined />
+          <Stats header={"Joined"} stat={joined} />
         </div>
       </div>
     );

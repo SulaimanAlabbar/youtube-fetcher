@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 const styles = theme => ({
   button: {
     margin: theme.spacing.unit
+    // backgroundColor: "blue"
   },
   input: {
     display: "none"
@@ -19,16 +20,15 @@ function Prune(props) {
   return (
     <div>
       {!empty ? (
-        <Button variant="contained" className={classes.button}>
-          Prune
-        </Button>
-      ) : (
         <Button
           variant="contained"
           color="secondary"
-          disabled
           className={classes.button}
         >
+          Prune
+        </Button>
+      ) : (
+        <Button variant="contained" disabled className={classes.button}>
           Prune
         </Button>
       )}

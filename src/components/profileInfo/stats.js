@@ -11,23 +11,23 @@ const styles = {
   }
 };
 
-function Bio(props) {
-  const { classes } = props;
-
+function Stats(props) {
+  const { classes, header, stat } = props;
+  // const { header } = this.props;
   return (
     <div className={classes.root}>
       <Typography component="h2" variant="h1" gutterBottom>
-        Joined
+        {header}
       </Typography>
       <Typography variant="h4" gutterBottom>
-        May 15, 2015
+        {stat}
       </Typography>
     </div>
   );
 }
 
-Bio.propTypes = {
+Stats.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Bio);
+export default withStyles(styles)(Stats);

@@ -28,7 +28,7 @@ class InputPanel extends React.Component {
       <form className={classes.container} noValidate autoComplete="on">
         <TextField
           id="filled-search"
-          label="User"
+          label="Channel"
           type="search"
           className={classes.textField}
           margin="normal"
