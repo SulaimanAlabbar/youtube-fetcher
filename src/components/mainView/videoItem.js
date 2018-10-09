@@ -36,8 +36,12 @@ function VideoItem(props) {
           <Typography gutterBottom variant="h5" component="h2">
             Video Title
           </Typography>
-          <Typography component="p">274,912 views</Typography>
-          <Typography component="p">Published on Jan 21, 2017</Typography>
+          <Typography variant="subtitle2" gutterBottom>
+            274,912 views
+          </Typography>
+          <Typography variant="subtitle2" gutterBottom>
+            Published on Jan 21, 2017
+          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>

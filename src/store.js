@@ -1,32 +1,36 @@
 import { createStore } from "redux";
 import reducer from "./reducers";
 
-// const initialState = {
-//   youtuber: [
-//     {
-//       name: "Name",
-//       avatarURL: "image",
-//       stats: {
-//         numOfSubscribers: 123,
-//         numOfViews: 123,
-//         numOfVideos: 123,
-//       },
-//       uploadsToken: "123",
-//       videos: [
-//         {
-//           videoTitle: "title",
-//           views: 123,
-//           publishDate: "date"
-//         },
-//       ],
-//     },
-//   ],
-//   currentPage: 123,
-//   nextPageToken: "123"
-// };
-
+/*
 const initialState = {
-  youtuber: [],
+  account: [
+    {
+      name: "Name",
+      bio: "abc",
+      joined: "date",
+      avatarURL: "image",
+      stats: {
+        numOfSubscribers: 123,
+        numOfViews: 123,
+        numOfVideos: 123,
+      },
+      uploadsToken: "123",
+      videos: [
+        {
+          videoTitle: "title",
+          views: 123,
+          publishDate: "date"
+        },
+      ],
+    },
+  ],
+  currentPage: 123,
+  nextPageToken: "123"
+};
+*/
+const initialState = {
+  account: [],
+  currentAccountIndex: -1,
   currentPage: 0,
   nextPageToken: ""
 };

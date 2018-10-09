@@ -13,10 +13,10 @@ const styles = {
 
 function Stats(props) {
   const { classes, header, stat } = props;
-  // const { header } = this.props;
+
   return (
     <div className={classes.root}>
-      <Typography component="h2" variant="h1" gutterBottom>
+      <Typography component="h1" variant="h3" gutterBottom>
         {header}
       </Typography>
       <Typography variant="h4" gutterBottom>

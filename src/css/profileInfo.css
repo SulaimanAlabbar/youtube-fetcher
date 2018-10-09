@@ -4,17 +4,30 @@
     justify-content: space-around;
     align-items: center;
     background-color: #FFE66D;
-    padding: 20px;
+    padding: 10px;
 }
 
-.profileInfoLeft {
+.profileInfoFirst {
     order: 1;
+    padding: 0 15px;
 }
 
-.profileInfoMiddle {
+.profileInfoSecond {
     order: 2;
+    padding: 0 15px;
 }
 
-.profileInfoRight {
+.profileInfoThird {
     order: 3;
+    padding: 0 15px;
+}
+
+.profileInfoFourth {
+    order: 4;
+    padding: 0 15px;
+}
+
+.profileInfoFifth {
+    order: 5;
+    padding: 0 15px;
 }
