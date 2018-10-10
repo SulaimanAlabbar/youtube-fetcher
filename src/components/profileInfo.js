@@ -30,7 +30,10 @@ class ProfileInfo extends React.Component {
           <AvatarAndBio name={name} avatarURL={avatarURL} bio={bio} />
         </div>
         <div className="profileInfoSecond">
-          <Stats header={"Joined"} stat={joined} />
+          <Stats
+            header={"Joined"}
+            stat={joined.replace("-", "/").replace("-", "/")}
+          />
         </div>
         <div className="profileInfoThird">
           <Stats header={"Videos"} stat={addCommas(videos)} />
