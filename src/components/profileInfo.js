@@ -7,7 +7,7 @@ import AccountInfo from "../functions/accountInfo";
 import addCommas from "../functions/addCommas";
 
 const mapStateToProps = state => {
-  return AccountInfo(state.account.length !== 0);
+  return AccountInfo(state.loaded);
 };
 
 class ProfileInfo extends React.Component {
@@ -30,10 +30,7 @@ class ProfileInfo extends React.Component {
           <AvatarAndBio name={name} avatarURL={avatarURL} bio={bio} />
         </div>
         <div className="profileInfoSecond">
-          <Stats
-            header={"Joined"}
-            stat={joined.replace("-", "/").replace("-", "/")}
-          />
+          <Stats header={"Joined"} stat={joined} />
         </div>
         <div className="profileInfoThird">
           <Stats header={"Videos"} stat={addCommas(videos)} />

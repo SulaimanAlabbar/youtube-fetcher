@@ -32,7 +32,8 @@ const initialState = {
   account: [],
   currentAccountIndex: -1,
   currentPage: 0,
-  nextPageToken: ""
+  nextPageToken: "",
+  loaded: false
 };
 
 const store = createStore(

@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
 import * as actionCreators from "../../actions";
-import fetchAccount from "../../functions/fetchers";
+import * as fetchers from "../../functions/fetchers";
 
 const mapDispatchToProps = actionCreators;
 
@@ -46,9 +46,19 @@ class InputPanel extends React.Component {
     this.setState({
       input: ""
     });
+    //=================================================
     const channel = this.state.input;
-    const chan = await fetchAccount(channel);
+    const chan = await fetchers.fetchAccount(channel);
     this.props.setAccountInfo(chan);
+    //=================================================
+    const tmp = this.props.state.account[this.props.state.currentAccountIndex]
+      .uploadsToken;
+    const vids = await fetchers.fetchVideos(tmp);
+    this.props.addVideos(vids);
+    console.log("this.props.state :", this.props.state);
+    //=================================================
+
+    //=================================================
   }
 
   handleChange(e) {
