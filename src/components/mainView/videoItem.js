@@ -6,7 +6,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import IMG from "../../images/avatar.jpg";
 import classNames from "classnames";
 
 const styles = {
@@ -14,14 +13,13 @@ const styles = {
     maxWidth: 210
   },
   media: {
-    // ⚠️ object-fit is not supported by IE11.
     objectFit: "cover"
   },
   root: {}
 };
 
 function VideoItem(props) {
-  const { classes } = props;
+  const { classes, title, publishDate, views, thumbnail } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -30,17 +28,17 @@ function VideoItem(props) {
           alt="image"
           className={classNames(classes.media, classes.root)}
           height="120"
-          image={IMG}
+          image={thumbnail}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Video Title
+            {title}
           </Typography>
           <Typography variant="subtitle2" gutterBottom>
-            274,912 views
+            Published at {publishDate}
           </Typography>
           <Typography variant="subtitle2" gutterBottom>
-            Published on Jan 21, 2017
+            {views} views
           </Typography>
         </CardContent>
       </CardActionArea>

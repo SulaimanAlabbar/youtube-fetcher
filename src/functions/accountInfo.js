@@ -5,7 +5,7 @@ export default function AccountInfo(loaded) {
     ...store.getState().account[store.getState().currentAccountIndex]
   };
 
-  return loaded
+  return store.getState().loaded
     ? {
         loaded: true,
         name: currentAccount.name,
