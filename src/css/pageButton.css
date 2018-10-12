@@ -1,58 +1,57 @@
-.pageButton-Up,
-.pageButton-Down {
-    position: relative;
-    text-align: center;
-    /* transition: background-color 0.5s;
+.pageButtonUp,
+.pageButtonDown {
+  position: relative;
+  text-align: center;
+  /* transition: background-color 0.5s;
     transition: background-color width height 0.5s; */
-    user-select: none;
-
+  user-select: none;
 }
 
-.pageButton-Up:hover,
-.pageButton-Down:hover {
-    animation-name: changeColor;
-    animation-duration: 1s;
-    background-color: rgb(216, 230, 236);
+.pageButtonUp:hover,
+.pageButtonDown:hover {
+  animation-name: changeColor;
+  animation-duration: 1s;
+  background-color: rgb(216, 230, 236);
 }
 
-.pageButton-Up:active {
-    animation-name: changePosBot;
-    animation-duration: 0.2s;
-    bottom: 2px;
+.pageButtonUp:active {
+  animation-name: changePosBot;
+  animation-duration: 0.2s;
+  bottom: 2px;
 }
 
-.pageButton-Down:active {
-    animation-name: changePosTop;
-    animation-duration: 0.2s;
-    top: 2px;
+.pageButtonDown:active {
+  animation-name: changePosTop;
+  animation-duration: 0.2s;
+  top: 2px;
 }
 
 @keyframes changeColor {
-    from {
-        background-color: #CAD8DE;
-    }
+  from {
+    background-color: #cad8de;
+  }
 
-    to {
-        background-color: rgb(216, 230, 236);
-    }
+  to {
+    background-color: rgb(216, 230, 236);
+  }
 }
 
 @keyframes changePosBot {
-    from {
-        bottom: 0px;
-    }
+  from {
+    bottom: 0px;
+  }
 
-    to {
-        bottom: 2px;
-    }
+  to {
+    bottom: 2px;
+  }
 }
 
 @keyframes changePosTop {
-    from {
-        top: 0px;
-    }
+  from {
+    top: 0px;
+  }
 
-    to {
-        top: 2px;
-    }
+  to {
+    top: 2px;
+  }
 }

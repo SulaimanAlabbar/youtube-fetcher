@@ -7,3 +7,4 @@ export const SORT_BY = "SORT_BY";
 export const PRUNE = "PRUNE";
 export const CHANGE_PAGE = "CHANGE_PAGE";
 export const CHANGE_ACCOUNT = "CHANGE_ACCOUNT";
+export const CLEAR_PAGE_TOKEN = "CLEAR_PAGE_TOKEN";

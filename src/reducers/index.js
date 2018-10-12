@@ -4,7 +4,8 @@ import {
   SORT_BY,
   PRUNE,
   CHANGE_PAGE,
-  CHANGE_ACCOUNT
+  CHANGE_ACCOUNT,
+  CLEAR_PAGE_TOKEN
 } from "../constants";
 
 function reducer(state, action) {
@@ -28,12 +29,14 @@ function reducer(state, action) {
               numOfVideos: action.channelInfo.numOfVideos
             },
             uploadsToken: action.channelInfo.uploadsToken,
-            videos: []
+            videos: [],
+            nextPageToken: ""
           }
         ],
         currentAccountIndex:
           state.account.length === 0 ? 0 : state.account.length,
         loaded: true
+        // nextPageToken: ""
       };
 
     case ADD_VIDEOS:
@@ -45,17 +48,24 @@ function reducer(state, action) {
             ...state.account[state.currentAccountIndex],
             videos: state.account[state.currentAccountIndex].videos.concat(
               action.videosInfo.videos
-            )
+            ),
+            nextPageToken: action.videosInfo.nextPageToken
           },
           ...state.account.slice(state.currentAccountIndex + 1)
-        ],
-        nextPageToken: action.videosInfo.nextPageToken
+        ]
+        // nextPageToken: action.videosInfo.nextPageToken
       };
 
     case CHANGE_ACCOUNT:
       return {
         ...state,
         currentAccountIndex: action.index
+      };
+
+    case CLEAR_PAGE_TOKEN:
+      return {
+        ...state,
+        nextPageToken: ""
       };
 
     default:

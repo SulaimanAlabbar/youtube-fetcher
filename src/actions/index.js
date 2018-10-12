@@ -4,7 +4,8 @@ import {
   SORT_BY,
   PRUNE,
   CHANGE_PAGE,
-  CHANGE_ACCOUNT
+  CHANGE_ACCOUNT,
+  CLEAR_PAGE_TOKEN
 } from "../constants";
 
 export function setAccountInfo(channelInfo) {
@@ -25,5 +26,11 @@ export function changeAccount(index) {
   return {
     type: CHANGE_ACCOUNT,
     index
+  };
+}
+
+export function clearPageToken() {
+  return {
+    type: CLEAR_PAGE_TOKEN
   };
 }

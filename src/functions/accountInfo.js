@@ -1,8 +1,9 @@
 import store from "../store";
 
 export default function AccountInfo(loaded) {
+  const state = store.getState();
   const currentAccount = {
-    ...store.getState().account[store.getState().currentAccountIndex]
+    ...state.account[state.currentAccountIndex]
   };
 
   return store.getState().loaded
@@ -15,7 +16,7 @@ export default function AccountInfo(loaded) {
         subs: currentAccount.stats.numOfSubscribers,
         views: currentAccount.stats.numOfViews,
         videos: currentAccount.stats.numOfVideos,
-        currentAccountIndex: store.getState().currentAccountIndex
+        currentAccountIndex: state.currentAccountIndex
       }
     : {
         loaded: false,

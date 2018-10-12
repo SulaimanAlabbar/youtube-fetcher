@@ -25,14 +25,16 @@ const initialState = {
     },
   ],
   currentPage: 123,
-  nextPageToken: "123"
+  currentAccountIndex: -1,
+  nextPageToken: "123",
+  loaded: false
 };
 */
 const initialState = {
   account: [],
   currentAccountIndex: -1,
   currentPage: 0,
-  nextPageToken: "",
+  // nextPageToken: "",
   loaded: false
 };
 

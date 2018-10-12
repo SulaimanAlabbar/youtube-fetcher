@@ -63,14 +63,15 @@ class InputPanel extends React.Component {
       //=================================================
       const tmp = this.props.state.account[this.props.state.currentAccountIndex]
         .uploadsToken;
-      const vids = await fetchers.fetchVideos(tmp);
+      const vids = await fetchers.fetchVideos(tmp, "");
       this.props.addVideos(vids);
-      console.log("this.props.state :", this.props.state);
+      console.log("this.props.state | INPUTPANEL :", this.props.state);
       //=================================================
 
       //=================================================
     } else {
       this.props.changeAccount(indexOfChannel);
+      this.props.clearPageToken();
     }
   }
 

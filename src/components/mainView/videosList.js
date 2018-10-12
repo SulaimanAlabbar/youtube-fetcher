@@ -26,6 +26,7 @@ const mapStateToProps = state => {
 //   }
 // }
 
+//load only videos of current page
 class VideosList extends React.Component {
   constructor() {
     super();

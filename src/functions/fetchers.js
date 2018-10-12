@@ -26,8 +26,12 @@ export async function fetchAccount(channel) {
   };
 }
 
-export async function fetchVideos(uploadsToken) {
-  const URL = `${BASE_URL_SECOND}${uploadsToken}&key=${API_KEY}`;
+export async function fetchVideos(uploadsToken, nextPageToken) {
+  const URL =
+    nextPageToken === ""
+      ? `${BASE_URL_SECOND}${uploadsToken}&key=${API_KEY}`
+      : `${BASE_URL_SECOND}${uploadsToken}&key=${API_KEY}&pageToken=${nextPageToken}`;
+
   let response = await axios.get(URL);
   console.log("second response :", response);
 

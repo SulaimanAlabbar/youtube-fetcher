@@ -8,9 +8,9 @@ class MainView extends React.Component {
   render() {
     return (
       <div style={{ backgroundColor: "#CAD8DE" }}>
-        <PageButton Image={UpArrow} Class={"pageButton-Up"} />
+        <PageButton image={UpArrow} direction={"pageButtonUp"} />
         <VideosList />
-        <PageButton Image={DownArrow} Class={"pageButton-Down"} />
+        <PageButton image={DownArrow} direction={"pageButtonDown"} />
       </div>
     );
   }
