@@ -3,7 +3,8 @@ import {
   ADD_VIDEOS,
   SORT_BY,
   PRUNE,
-  CHANGE_PAGE
+  CHANGE_PAGE,
+  CHANGE_ACCOUNT
 } from "../constants";
 
 function reducer(state, action) {
@@ -30,7 +31,8 @@ function reducer(state, action) {
             videos: []
           }
         ],
-        currentAccountIndex: state.currentAccountIndex + 1,
+        currentAccountIndex:
+          state.account.length === 0 ? 0 : state.account.length,
         loaded: true
       };
 
@@ -48,6 +50,12 @@ function reducer(state, action) {
           ...state.account.slice(state.currentAccountIndex + 1)
         ],
         nextPageToken: action.videosInfo.nextPageToken
+      };
+
+    case CHANGE_ACCOUNT:
+      return {
+        ...state,
+        currentAccountIndex: action.index
       };
 
     default:
