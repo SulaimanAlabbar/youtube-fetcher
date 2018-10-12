@@ -19,9 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-<<<<<<< HEAD
 
 apiKey.js
 logs.txt
-=======
->>>>>>> ff7e0c5... Initial commit from Create React App
