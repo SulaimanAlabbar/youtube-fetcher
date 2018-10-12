@@ -10,7 +10,8 @@ const mapDispatchToProps = actionCreators;
 
 const mapStateToProps = state => {
   return {
-    state: state
+    state: state,
+    accounts: state.account
   };
 };
 
@@ -43,22 +44,34 @@ class InputPanel extends React.Component {
 
   async handleSubmit(e) {
     e.preventDefault();
+    if (this.state.input === "") return;
+
+    const { accounts } = this.props;
+
     this.setState({
       input: ""
     });
     //=================================================
     const channel = this.state.input;
-    const chan = await fetchers.fetchAccount(channel);
-    this.props.setAccountInfo(chan);
-    //=================================================
-    const tmp = this.props.state.account[this.props.state.currentAccountIndex]
-      .uploadsToken;
-    const vids = await fetchers.fetchVideos(tmp);
-    this.props.addVideos(vids);
-    console.log("this.props.state :", this.props.state);
-    //=================================================
+    const indexOfChannel = accounts.findIndex(
+      el => el.name.toLowerCase() === channel.toLowerCase()
+    );
 
-    //=================================================
+    if (indexOfChannel === -1 || accounts.length === 0) {
+      const chan = await fetchers.fetchAccount(channel);
+      this.props.setAccountInfo(chan);
+      //=================================================
+      const tmp = this.props.state.account[this.props.state.currentAccountIndex]
+        .uploadsToken;
+      const vids = await fetchers.fetchVideos(tmp);
+      this.props.addVideos(vids);
+      console.log("this.props.state :", this.props.state);
+      //=================================================
+
+      //=================================================
+    } else {
+      this.props.changeAccount(indexOfChannel);
+    }
   }
 
   handleChange(e) {
