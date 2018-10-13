@@ -13,7 +13,6 @@ const BASE_URL_THREE =
 export async function fetchAccount(channel) {
   const URL = `${BASE_URL_FIRST}${channel}&key=${API_KEY}`;
   let response = await axios.get(URL);
-  console.log("first response :", response);
   return {
     name: response.data.items[0].snippet.title,
     bio: response.data.items[0].snippet.description,
@@ -32,8 +31,7 @@ export async function fetchVideos(uploadsToken, nextPageToken) {
       ? `${BASE_URL_SECOND}${uploadsToken}&key=${API_KEY}`
       : `${BASE_URL_SECOND}${uploadsToken}&key=${API_KEY}&pageToken=${nextPageToken}`;
 
-  let response = await axios.get(URL);
-  console.log("second response :", response);
+  let response = await axios.get(URL).catch(error => console.log(error));
 
   const ids = response.data.items
     .map(el => el.snippet.resourceId.videoId)
@@ -49,7 +47,8 @@ export async function fetchVideos(uploadsToken, nextPageToken) {
         .slice(0, 10)
         .replace("-", "/")
         .replace("-", "/"),
-      views: viewsArray[index]
+      views: viewsArray[index],
+      videoId: el.snippet.resourceId.videoId
     })),
     nextPageToken: response.data.nextPageToken
   };
@@ -57,6 +56,6 @@ export async function fetchVideos(uploadsToken, nextPageToken) {
 
 async function fetchViews(ids) {
   const URL = `${BASE_URL_THREE}${ids}&key=${API_KEY}`;
-  let response = await axios.get(URL);
+  let response = await axios.get(URL).catch(error => console.log(error));
   return response.data.items.map(el => el.statistics.viewCount);
 }

@@ -60,15 +60,10 @@ class InputPanel extends React.Component {
     if (indexOfChannel === -1 || accounts.length === 0) {
       const chan = await fetchers.fetchAccount(channel);
       this.props.setAccountInfo(chan);
-      //=================================================
       const tmp = this.props.state.account[this.props.state.currentAccountIndex]
         .uploadsToken;
       const vids = await fetchers.fetchVideos(tmp, "");
       this.props.addVideos(vids);
-      console.log("this.props.state | INPUTPANEL :", this.props.state);
-      //=================================================
-
-      //=================================================
     } else {
       this.props.changeAccount(indexOfChannel);
       this.props.clearPageToken();
@@ -84,13 +79,12 @@ class InputPanel extends React.Component {
   render() {
     const { classes } = this.props;
     const { input } = this.state;
-    //return autoComplete, set on
     //what's no validate?
     return (
       <form
         className={classes.container}
         noValidate
-        autoComplete="off"
+        autoComplete="on"
         onSubmit={e => this.handleSubmit(e)}
       >
         <TextField

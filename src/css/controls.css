@@ -1,27 +1,28 @@
 .controlsContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    /* background-color: rgb(148, 237, 255); */
-    background-color: rgb(152, 200, 228);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(152, 200, 228);
+  padding: 10px;
+  height: 250px;
 }
 
 .controlsLeft {
-    order: 1;
-    display: flex;
-    align-items: center;
+  order: 1;
+  display: flex;
+  align-items: center;
 }
 
 .controlsRight {
-    order: 2;
-    display: flex;
-    flex-direction: column;
+  order: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .controlsRight .SortBy {
-    order: 1;
+  order: 1;
 }
 
 .controlsRight .Prune {
-    order: 2;
+  order: 2;
 }

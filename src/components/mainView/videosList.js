@@ -16,17 +16,6 @@ const mapStateToProps = state => {
       };
 };
 
-// let items = [];
-
-// load;
-
-// function set() {
-//   for (let i = 0; i < 14; i++) {
-//     items.push(<VideoItem key={i} />);
-//   }
-// }
-
-//load only videos of current page
 class VideosList extends React.Component {
   constructor() {
     super();
@@ -41,6 +30,7 @@ class VideosList extends React.Component {
         publishDate={video.publishDate}
         views={addCommas(video.views)}
         thumbnail={video.thumbnail}
+        videoId={video.videoId}
         key={video.title + index} //change to uuid
       />
     ));
@@ -49,14 +39,11 @@ class VideosList extends React.Component {
   render() {
     const { loaded, videos } = this.props;
 
-    if (loaded) {
-      // set();
-      return (
-        <div className="videosListContainer">{this.loadVideos(videos)}</div>
-      );
-    } else {
-      return <div />;
-    }
+    return loaded ? (
+      <div className="videosListContainer">{this.loadVideos(videos)}</div>
+    ) : (
+      <div />
+    );
   }
 }
 
